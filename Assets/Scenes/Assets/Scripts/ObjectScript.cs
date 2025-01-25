@@ -4,28 +4,42 @@ using UnityEngine;
 
 public class ObjectScript : MonoBehaviour
 {
-    private Vector3 previous_mouse_position;
+    private Animator animator;
+    private Vector3 afk_mouse_position;
 
-    public float rotation_speed = 100f;
+    public float timer = 0f;
+    public bool afk = false;
+
+    public int hit_counter = 0;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(1))
+        if (Input.mousePosition == afk_mouse_position)
         {
-            previous_mouse_position = Input.mousePosition;
+            timer += Time.deltaTime;
+
+            if (timer > 5f)
+            {
+                afk = true;
+                animator.SetBool("AFK", true);
+            }
+        } else
+        {
+            afk = false;
+            animator.SetBool("AFK", false);
+            timer = 0f;
         }
 
-        if (Input.GetMouseButton(1))
-        {
-            Vector3 delta_mouse_position = Input.mousePosition - previous_mouse_position;
+        afk_mouse_position = Input.mousePosition;
+    }
 
-            float x_rotation = delta_mouse_position.y * rotation_speed * Time.deltaTime;
-            float y_rotation = -delta_mouse_position.x * rotation_speed * Time.deltaTime;
-
-            Quaternion rotation = Quaternion.Euler(x_rotation, y_rotation, 0);
-            transform.rotation = rotation * transform.rotation;
-
-            previous_mouse_position = Input.mousePosition;
-        }
-    }        
+    private void OnMouseUpAsButton()
+    {
+        hit_counter += 1;
+    }
 }
