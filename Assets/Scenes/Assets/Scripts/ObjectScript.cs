@@ -41,5 +41,17 @@ public class ObjectScript : MonoBehaviour
     private void OnMouseUpAsButton()
     {
         hit_counter += 1;
+        animator.SetBool("Clicked", true);
+        animator.SetTrigger("Click");
+    }
+
+    private void OnMouseEnter()
+    {
+        animator.SetBool("Hover", true);
+    }
+
+    private void OnMouseExit()
+    {
+        animator.SetBool("Hover", false);
     }
 }
