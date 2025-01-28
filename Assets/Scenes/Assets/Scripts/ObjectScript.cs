@@ -7,6 +7,8 @@ public class ObjectScript : MonoBehaviour
     private Animator animator;
     private Vector3 afk_mouse_position;
 
+    public ParticleSystem particle_click;
+
     public float timer = 0f;
     public bool afk = false;
 
@@ -53,5 +55,10 @@ public class ObjectScript : MonoBehaviour
     private void OnMouseExit()
     {
         animator.SetBool("Hover", false);
+    }
+
+    public void play_effect()
+    {
+        particle_click.Play();
     }
 }
