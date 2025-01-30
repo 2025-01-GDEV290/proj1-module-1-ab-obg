@@ -24,7 +24,7 @@ public class ObjectScript : MonoBehaviour
         animator = GetComponent<Animator>();
         audio_source = GetComponent<AudioSource>();
 
-        audio_source.clip = pop;
+        
 
         random_crack.transform.rotation = Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
         random_crack_2.transform.rotation = Quaternion.Euler(Random.Range(0f, 360f), Random.Range(0f, 360f), Random.Range(0f, 360f));
@@ -56,6 +56,7 @@ public class ObjectScript : MonoBehaviour
         hit_counter += 1;
         animator.SetBool("Clicked", true);
         animator.SetTrigger("Click");
+        animator.SetInteger("Click Amount", hit_counter);
     }
 
     private void OnMouseEnter()
@@ -73,6 +74,7 @@ public class ObjectScript : MonoBehaviour
         particle_click.Play();
 
         //Sound effect
+        audio_source.clip = pop;
         audio_source.Play();
 
         random_crack.SetActive(true);
