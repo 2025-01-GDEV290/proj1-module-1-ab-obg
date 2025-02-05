@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObjectScript : MonoBehaviour
 {
+    public GameObject Egg;
+    public GameObject Duck;
+
     private Animator animator;
     private Vector3 afk_mouse_position;
 
@@ -83,5 +86,11 @@ public class ObjectScript : MonoBehaviour
         {
             random_crack_2.SetActive(true);
         }
+    }
+
+    public void on_break()
+    {
+        Egg.SetActive(false);
+        Duck.SetActive(true);
     }
 }
