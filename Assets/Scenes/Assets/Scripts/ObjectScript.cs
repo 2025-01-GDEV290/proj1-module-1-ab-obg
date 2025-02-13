@@ -12,8 +12,10 @@ public class ObjectScript : MonoBehaviour
 
     private AudioSource audio_source;
     public AudioClip pop;
+    public AudioClip open;
 
     public ParticleSystem particle_click;
+    public ParticleSystem particle_star;
 
     public float timer = 0f;
     public bool afk = false;
@@ -86,6 +88,14 @@ public class ObjectScript : MonoBehaviour
         {
             random_crack_2.SetActive(true);
         }
+    }
+
+    public void on_open()
+    {
+        particle_star.Play();
+
+        audio_source.clip = open;
+        audio_source.Play();
     }
 
     public void on_break()

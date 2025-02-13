@@ -5608,7 +5608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inspect: 0
-  rotation_speed: 100
+  rotation_speed: 30
 --- !u!135 &834150736
 SphereCollider:
   m_ObjectHideFlags: 0
