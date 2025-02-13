@@ -560,7 +560,9 @@ MonoBehaviour:
   Egg: {fileID: 455200618}
   Duck: {fileID: 834150731}
   pop: {fileID: 8300000, guid: 26db343415e6c0b42bab644fbbe1507b, type: 3}
+  open: {fileID: 0}
   particle_click: {fileID: 614852473}
+  particle_star: {fileID: 616224858}
   timer: 0
   afk: 0
   hit_counter: 0
@@ -707,7 +709,7 @@ GameObject:
   - component: {fileID: 616224858}
   - component: {fileID: 616224857}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Star Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +872,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -923,7 +925,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1365,7 +1367,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1418,7 +1420,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1734,7 +1736,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 4
+        scalar: 10
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5576,13 +5578,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616224856}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071047, y: -0, z: -0, w: 0.7071089}
-  m_LocalPosition: {x: 0, y: -6.749955, z: -0.2500403}
+  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000035017724}
+  m_LocalPosition: {x: 0, y: -0.2500167, z: 8.500006}
   m_LocalScale: {x: 2.1366577, y: 2.1922, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!1 &834150731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 66f34a31c57c83b4a8b6f0458510bf19,
